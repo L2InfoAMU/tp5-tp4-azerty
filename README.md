@@ -11,5 +11,5 @@ On va considérer quatre manières de représenter une image en couleur et donc 
 
 ## Membres du projet
 
-- NOM, prénom, numéro de groupe, du premier participant
+- TINTORRI, FLoren, groupe 2 , du premier participant
 - NOM, prénom, numéro de groupe, du deuxième participant
