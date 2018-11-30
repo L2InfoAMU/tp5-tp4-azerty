@@ -23,8 +23,9 @@ public class BruteRasterImage implements Image {
 
     public BruteRasterImage(Color[][] colors) {
 
-
     }
+
+
 
     public void createRepresentation() { //: alloue la matrice représentant l’image.
         pixels = new Color[this.width][this.height];

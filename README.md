@@ -12,4 +12,4 @@ On va considérer quatre manières de représenter une image en couleur et donc 
 ## Membres du projet
 
 - TINTORRI, FLoren, groupe 2 , du premier participant
-- NOM, prénom, numéro de groupe, du deuxième participant
+- SAUMARD, Romain, groupe 2, du deuxième participant
