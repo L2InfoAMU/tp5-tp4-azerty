@@ -8,24 +8,44 @@ public class BruteRasterImage implements Image {
     Color color;
     int width;
     int height;
-    Color [][] pixels;
+    Color[][] pixels;
 
-    public BruteRasterImage(Color color, int width, int height){
-        this.width=width;
-        this.height=height;
-         for(int i=0; i<width; i++){
-             for(int j=0;j<height; j++){
-                 pixels[i][j]=color;
-             }
-         }
-
-    }
-
-    public BruteRasterImage(Color[][] colors){
-
+    public BruteRasterImage(Color color, int width, int height) {
+        this.width = width;
+        this.height = height;
+        for (int i = 0; i < width; i++) {
+            for (int j = 0; j < height; j++) {
+                pixels[i][j] = color;
+            }
+        }
 
     }
 
+    public BruteRasterImage(Color[][] colors) {
+
+
+    }
+    public void createRepresentation(){ //: alloue la matrice représentant l’image.
+        pixels=new Color [this.width][this.height];
+    }
+    public void setPixelColor(Color color, int x, int y) // : fixe la couleur d’un pixel.
+    {
+        pixels[x][y]= color;
+
+
+    }
+    private void setPixelsColor(Color[][] pixels)// met à jour les valeurs de couleurs de l’image en utilisant les valeurs de la matrice donnée en paramètre.
+    {}
+    private void setPixelsColor(Color color) //change les valeurs de tous les pixels pour qu’ils soient tous de la couleur donnée en paramètre.
+    {}
+    public int getWidth() //retourne la largeur de l’image.
+    {}
+    public int getHeight()//retourne la hauteur de l’image.
+    {}
+    protected void setWidth(int width) //: fixe la largeur de l’image.
+    { this.width=width; }
+    protected void setHeight(int height)// : fixe la hauteur de l’image.
+    { this.height=height; }
 
     @Override
     public Color getPixelColor(int x, int y) {
