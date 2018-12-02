@@ -22,7 +22,11 @@ public class BruteRasterImage implements Image {
     }
 
     public BruteRasterImage(Color[][] colors) {
-
+        for (int i = 0; i < width; i++) {
+            for (int j = 0; j < height; j++) {
+                pixels[i][j] = color;
+            }
+        }
     }
 
 
@@ -34,8 +38,6 @@ public class BruteRasterImage implements Image {
     public void setPixelColor(Color color, int x, int y) // : fixe la couleur d’un pixel.
     {
         pixels[x][y] = color;
-
-
     }
 
     private void setPixelsColor(Color[][] pixels)// met à jour les valeurs de couleurs de l’image en utilisant les valeurs de la matrice donnée en paramètre.
@@ -81,5 +83,7 @@ public class BruteRasterImage implements Image {
     public Color getPixelColor(int x, int y) {
         return this.pixels[x][y];
     }
+
+
 
 }
