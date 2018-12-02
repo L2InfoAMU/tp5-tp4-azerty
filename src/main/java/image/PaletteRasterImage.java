@@ -17,4 +17,9 @@ public class PaletteRasterImage implements Image {
     public PaletteRasterImage(Color[][] pixels){
         this.pixels=pixels;
     }
+
+    public getPixelColor(int x, int y){
+
+
+    }
 }

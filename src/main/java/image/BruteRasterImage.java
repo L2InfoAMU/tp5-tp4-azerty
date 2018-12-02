@@ -81,7 +81,7 @@ public class BruteRasterImage implements Image {
 
     @Override
     public Color getPixelColor(int x, int y) {
-        return this.color;//this.pixels[x][y];
+        return /*this.color;/*/this.pixels[y][x];
     }
 
 
