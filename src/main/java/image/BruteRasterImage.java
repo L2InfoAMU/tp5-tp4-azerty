@@ -8,24 +8,25 @@ public class BruteRasterImage implements Image {
     Color color;
     int width;
     int height;
-    Color[][] pixels;
+    Color pixels[][];
 
     public BruteRasterImage(Color color, int width, int height) {
         this.width = width;
         this.height = height;
-        /*for (int i = 0; i <= width; i++) {
-            for (int j = 0; j <= height; j++) {
-                pixels[i][j] = color;
+        for (int i = 0; i < width; i++) {
+            for (int j = 0; j < height; j++) {
+                this.color = color;
             }
-        }*/
-        this.color=color;
+        }
 
     }
 
     public BruteRasterImage(Color[][] color) {
-
+        for (int i = 0; i < width; i++) {
+            for (int j = 0; j < height; j++) {
                 pixels = color;
-
+            }
+        }
     }
 
 
@@ -80,7 +81,7 @@ public class BruteRasterImage implements Image {
 
     @Override
     public Color getPixelColor(int x, int y) {
-        return this.pixels[x][y].color;
+        return /*color; //*/this.pixels[x][y];
     }
 
 
