@@ -1,6 +1,6 @@
 package image;
 import javafx.scene.paint.Color;
-
+/*
 public class PaletteRasterImage implements Image {
 
     Color color;
@@ -23,3 +23,4 @@ public class PaletteRasterImage implements Image {
 
     }
 }
+*/
