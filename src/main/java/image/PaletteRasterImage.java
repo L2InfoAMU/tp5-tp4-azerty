@@ -5,6 +5,8 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
+import static util.Matrices.getColumnCount;
+import static util.Matrices.getRowCount;
 import static util.Matrices.requiresNonNull;
 
 public class PaletteRasterImage implements Image {
@@ -21,7 +23,10 @@ public class PaletteRasterImage implements Image {
     }
 
     public PaletteRasterImage(Color[][] pixels){
-
+        setHeight(getColumnCount(pixels));
+        setWidth(getRowCount(pixels));
+        createRepresentation();
+        setPixelsColor(pixels);
     }
 
     public void createRepresentation()                                    // :alloue la liste pour stocker la palette et la matrice représentant l’image (à utiliser dans le constructeur).
@@ -48,15 +53,21 @@ public class PaletteRasterImage implements Image {
          }
     }
     private void setPixelsColor(Color color)                              // : change les valeurs de tous les pixels pour qu’ils soient tous de la couleur donnée en paramètre.
-    {}
+    {
+        for(int x=0;x<getHeight();x++){
+            for(int y=0; y<getWidth() ;y++){
+                setPixelColor(color,x,y);
+            }
+        }
+    }
     public int getWidth()                                                 //: retourne la largeur de l’image.
-    { width();}
+    { return width;}
     public int getHeight()                                                //: retourne la hauteur de l’image.
-    {}
+    {return height;}
     protected void setWidth(int width)                                    //: fixe la largeur de l’image.
-    {}
+    {this.width=width;}
     protected void setHeight(int height)                                  // : fixe la hauteur de l’image.
-    {}
+    {this.height=height;}
 
 
 }
