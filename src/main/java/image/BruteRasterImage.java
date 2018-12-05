@@ -1,6 +1,6 @@
 package image;
 
-import image.Image;//
+import image.Image;
 import javafx.scene.paint.Color;
 import static util.Matrices.getRowCount;
 import static util.Matrices.getColumnCount;
