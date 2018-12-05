@@ -20,6 +20,7 @@ public class PaletteRasterImage implements Image {
         this.width=width;
         this.height=height;
         createRepresentation();
+        setPixelsColor(color);
     }
 
     public PaletteRasterImage(Color[][] pixels){
