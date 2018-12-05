@@ -4,6 +4,7 @@ import image.Image;
 import javafx.scene.paint.Color;
 import static util.Matrices.getRowCount;
 import static util.Matrices.getColumnCount;
+import static util.Matrices.requiresNonNull;
 
 public class BruteRasterImage implements Image {
 
@@ -39,6 +40,7 @@ public class BruteRasterImage implements Image {
 
     private void setPixelsColor(Color[][] pixels)// met à jour les valeurs de couleurs de l’image en utilisant les valeurs de la matrice donnée en paramètre.
     {
+        requiresNonNull(pixels);
         for (int i = 0; i < getWidth(); i++) {
             for (int j = 0; j < getHeight(); j++) {
                 this.pixels[i][j] = pixels[i][j];
@@ -48,6 +50,7 @@ public class BruteRasterImage implements Image {
 
     private void setPixelsColor(Color color) //change les valeurs de tous les pixels pour qu’ils soient tous de la couleur donnée en paramètre.
     {
+
         for (int i = 0; i < getWidth(); i++) {
             for (int j = 0; j < getHeight(); j++) {
                 setPixelColor(color, i , j);
