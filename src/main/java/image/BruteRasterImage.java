@@ -5,29 +5,23 @@ import javafx.scene.paint.Color;
 
 public class BruteRasterImage implements Image {
 
-    Color color;
     int width;
     int height;
     Color[][] pixels;
 
     public BruteRasterImage(Color color, int width, int height) {
-        this.width = width;
-        this.height = height;
-        this.pixels=news Color pixels[width][height]; // a revoir
-        for (int i = 0; i < width; i++) {
-            for (int j = 0; j < height; j++) {
-                this.pixels[i][j] = color;
-            }
-        }
+        setWidth(width);
+        setHeight(height);
+        pixels= new Color[width][height];
+        setPixelsColor( color);
 
     }
 
-    public BruteRasterImage(Color[][] color) {
-        for (int i = 0; i < width; i++) {
-            for (int j = 0; j < height; j++) {
-                pixels[i][j] = color[i][j];
-            }
-        }
+    public BruteRasterImage(Color color[][]) {
+        //setHeight(height);
+        //setWidth(width);
+        createRepresentation();
+        setPixelsColor(color);
     }
 
 
@@ -43,18 +37,18 @@ public class BruteRasterImage implements Image {
 
     private void setPixelsColor(Color[][] pixels)// met à jour les valeurs de couleurs de l’image en utilisant les valeurs de la matrice donnée en paramètre.
     {
-        for (int i = 0; i < this.width; i++) {
-            for (int j = 0; j < this.height; j++) {
-                this.pixels[i][j] = pixels[i][j];
+        for (int i = 0; i < getWidth(); i++) {
+            for (int j = 0; j < getHeight(); j++) {
+                this.pixels[i][j] = getPixelColor(i,j);
             }
         }
     }
 
     private void setPixelsColor(Color color) //change les valeurs de tous les pixels pour qu’ils soient tous de la couleur donnée en paramètre.
     {
-        for (int i = 0; i < this.width; i++) {
-            for (int j = 0; j < this.height; j++) {
-                this.pixels[i][j] = color;
+        for (int i = 0; i < getWidth(); i++) {
+            for (int j = 0; j < getHeight(); j++) {
+                setPixelColor(color, i , j);
             }
         }
     }
