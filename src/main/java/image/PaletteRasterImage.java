@@ -9,7 +9,7 @@ import static util.Matrices.getColumnCount;
 import static util.Matrices.getRowCount;
 import static util.Matrices.requiresNonNull;
 
-public class PaletteRasterImage implements Image {
+public class PaletteRasterImage extends RasterImage implements Image {
 
     int width;
     int height;
