@@ -17,17 +17,21 @@ public class PaletteRasterImage extends RasterImage implements Image {
     int[][] indexPalette; // ( 0,0)=3-> vert  (0 ,1)=2 ->: bleu
 
     public PaletteRasterImage(Color color, int width, int height) {
+        super(color, width, height);
+        /*
         this.width=width;
         this.height=height;
         createRepresentation();
-        setPixelsColor(color);
+        setPixelsColor(color);*/
     }
 
     public PaletteRasterImage(Color[][] pixels){
+        super(pixels);
+        /*
         setHeight(getColumnCount(pixels));
         setWidth(getRowCount(pixels));
         createRepresentation();
-        setPixelsColor(pixels);
+        setPixelsColor(pixels);*/
     }
 
     public void createRepresentation()                                    // :alloue la liste pour stocker la palette et la matrice représentant l’image (à utiliser dans le constructeur).

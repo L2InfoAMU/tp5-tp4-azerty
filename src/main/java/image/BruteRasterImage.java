@@ -6,25 +6,23 @@ import static util.Matrices.getRowCount;
 import static util.Matrices.getColumnCount;
 import static util.Matrices.requiresNonNull;
 
-public class BruteRasterImage extends RasterImage implements Image{
+public class BruteRasterImage extends RasterImage {
 
     int width;
     int height;
     Color[][] pixels;
 
     public BruteRasterImage(Color color, int width, int height) {
-        setWidth(width);
-        setHeight(height);
-        createRepresentation();
-        setPixelsColor( color);
+      super(color, width, height);
 
     }
 
     public BruteRasterImage(Color[][] color) {
-        setHeight(getColumnCount(color));
+        super(color);
+       /* setHeight(getColumnCount(color));
         setWidth(getRowCount(color));
         createRepresentation();
-        setPixelsColor(color);
+        setPixelsColor(color);*/
     }
 
 
