@@ -25,7 +25,7 @@ public class BruteRasterImage extends RasterImage {
         setPixelsColor(color);*/
     }
 
-
+/*
 
     public void createRepresentation() { //: aloue la matrice représentant l’image.
         this.pixels = new Color[this.width][this.height];
@@ -79,9 +79,9 @@ public class BruteRasterImage extends RasterImage {
 
     @Override
     public Color getPixelColor(int x, int y) {
-        return /*this.color;/*/this.pixels[x][y];
+        return this.pixels[x][y];
     }
-
+*/
 
 
 }

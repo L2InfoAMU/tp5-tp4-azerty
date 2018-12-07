@@ -33,7 +33,7 @@ public class PaletteRasterImage extends RasterImage implements Image {
         createRepresentation();
         setPixelsColor(pixels);*/
     }
-
+/*
     public void createRepresentation()                                    // :alloue la liste pour stocker la palette et la matrice représentant l’image (à utiliser dans le constructeur).
     { this.indexPalette=new  int[getWidth()][getHeight()];
     this.palette= new ArrayList<>();
@@ -72,7 +72,7 @@ public class PaletteRasterImage extends RasterImage implements Image {
     protected void setWidth(int width)                                    //: fixe la largeur de l’image.
     {this.width=width;}
     protected void setHeight(int height)                                  // : fixe la hauteur de l’image.
-    {this.height=height;}
+    {this.height=height;}*/
 
 
 }
