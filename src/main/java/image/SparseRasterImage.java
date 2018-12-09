@@ -18,15 +18,11 @@ public class SparseRasterImage extends RasterImage{
   //  — deux constructeurs :
 
   public SparseRasterImage(Color color, int width, int height)     //: construisant une image de la taille spécifiée et dont tous les pixels sont de la couleur spécifiée .
-    {   setWidth(width);
-        setHeight(height);
-        createRepresentation();
-        setPixelsColor( color);
-
+    {   super(color, width, height);
     }
   public SparseRasterImage(Color[][] pixels)                       //: construisant une image à partir de la matrice donnée en paramètre.
   {                                                                //:  Le premier indice correspondant à la coordonnée en x et le deuxième indice correspondant à la coordonnée en y.
-
+      super(pixels);
   }
   //neufs méthodes :
 
