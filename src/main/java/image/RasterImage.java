@@ -43,7 +43,7 @@ public abstract class RasterImage implements Image{
             requiresNonNull(pixels);
             for (int i = 0; i < getWidth(); i++) {
                 for (int j = 0; j < getHeight(); j++) {
-                    this.pixels[i][j] = pixels[i][j];
+                    setPixelColor(pixels[i][j], i, j);
                 }
             }
         }

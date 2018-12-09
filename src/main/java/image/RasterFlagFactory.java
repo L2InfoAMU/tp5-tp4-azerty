@@ -1,5 +1,6 @@
 package image;
 
+
 import javafx.scene.paint.Color;
 
 public class RasterFlagFactory implements ImageFactory {
@@ -30,6 +31,8 @@ public class RasterFlagFactory implements ImageFactory {
             }
         }
         switch (rasterImageType){
+            case SPARSE:
+                return new SparseRasterImage(colors);
             case BRUTE:
                 return new BruteRasterImage(colors);
             case PALETTE:

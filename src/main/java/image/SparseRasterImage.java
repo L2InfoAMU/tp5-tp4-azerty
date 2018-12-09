@@ -1,52 +1,56 @@
 package image;
 
-import java.awt.*;
+import javafx.scene.paint.Color;
 
-import static util.Matrices.getColumnCount;
-import static util.Matrices.getRowCount;
+import java.util.HashMap;
+import java.util.Map;
+
 import static util.Matrices.requiresNonNull;
 
-public class SparseRasterImage{
+public class SparseRasterImage extends RasterImage{
 
-    Color color;
+    Map<Point, Color> hashMap;
     int width;
-    int height;
+    Point point;
+
     Color[][] pixels;
 
   //  — deux constructeurs :
 
   public SparseRasterImage(Color color, int width, int height)     //: construisant une image de la taille spécifiée et dont tous les pixels sont de la couleur spécifiée .
-    {
-        setWidth(width);
+    {   setWidth(width);
         setHeight(height);
         createRepresentation();
         setPixelsColor( color);
 
     }
   public SparseRasterImage(Color[][] pixels)                       //: construisant une image à partir de la matrice donnée en paramètre.
-                                                                   //:  Le premier indice correspondant à la coordonnée en x et le deuxième indice correspondant à la coordonnée en y.
-    {
-        setHeight(getColumnCount(pixels);
-        setWidth(getRowCount(pixels));
-        createRepresentation();
-        setPixelsColor(pixels);
-    }
+  {                                                                //:  Le premier indice correspondant à la coordonnée en x et le deuxième indice correspondant à la coordonnée en y.
+
+  }
   //neufs méthodes :
 
-  public void createRepresentation()                               //: crée le dictionnaire HashMap<Point,Color> pour stocker  l’association entre points et couleurs.
-  {}
+
+
+  public void createRepresentation()                               //: ++pour stocker  l’association entre points et couleurs.
+  {  this.hashMap=new HashMap<>();}
 
   public void setPixelColor(Color color, int i, int j)             //: fixe la couleur d’un pixel (en associant le point de coordonnée (x, y) à la couleur).
-    {this.pixels[i][j] = pixels[i][j];}
+  {
+      point = new Point(i,j);
+      hashMap.put(point, color);
+    }
 
   public Color getPixelColor(int x, int y)                         //: retourne la couleur d’un pixel.
-    { return this.pixels[x][y];}
+    {
+        point = new Point(x,y);
+        return this.hashMap.get(point);}
 
   private void setPixelsColor(Color[][] pixels)                    //: met à jour les valeurs de couleurs de l’image  en utilisant les valeurs de la matrice donnée en paramètre.
     {            requiresNonNull(pixels);
         for (int i = 0; i < getWidth(); i++) {
             for (int j = 0; j < getHeight(); j++) {
-                setPixelColor(color,i,j);
+                setPixelColor(pixels[i][j], i, j);
             }
         }
     }
