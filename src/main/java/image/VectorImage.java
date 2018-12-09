@@ -3,6 +3,7 @@ package image;
 import javafx.scene.paint.Color;
 
 import java.util.List;
+import java.util.Map;
 
 public class VectorImage implements Image{
     List<Shape> shapes;
@@ -17,7 +18,10 @@ public class VectorImage implements Image{
 
     @Override
     public Color getPixelColor(int x, int y) {
-        return ;
+          if(SparseRasterImage.getPixelColor(x, y)) {
+
+          }
+        else return Color.WHITE; ;
     }
 
     @Override
@@ -38,9 +42,9 @@ public class VectorImage implements Image{
 
 
 /*
-— VectorImage : dans cette représentation, on stocke une liste de formes géométriques (utilisant l’interface
-Shape). Une image de type sera construite à partir de List<Shape> shapes. Chaque forme géométrique
-(qui peut être un cercle, un rectangle, . . .) contient un certain nombre de points et définit la couleur des
-points à l’intérieur. La couleur d’un point de l’image est la couleur de la première forme dans la liste qui
-contient le point ou bien blanc si le point n’est contenu dans aucune forme.
+— VectorImage : dans cette représentation, on stocke une liste de formes géométriques (utilisant l’interface Shape).
+Une image de type sera construite à partir de List<Shape> shapes.
+Chaque forme géométrique(qui peut être un cercle, un rectangle, . . .) contient un certain nombre de points et définit la couleur des points à l’intérieur.
+
+La couleur d’un point de l’image est la couleur de la première forme dans la liste qui contient le point ou bien blanc si le point n’est contenu dans aucune forme.
  */

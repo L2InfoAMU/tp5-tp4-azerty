@@ -11,7 +11,7 @@ public class SparseRasterImage extends RasterImage{
 
     Map<Point, Color> hashMap;
     int width;
-    Point point;
+    static Point point;
 
     Color[][] pixels;
 
