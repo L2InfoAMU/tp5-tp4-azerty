@@ -3,6 +3,7 @@ package image;
 
 import javafx.scene.paint.Color;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class VectorImage implements Image{
@@ -10,15 +11,15 @@ public class VectorImage implements Image{
     int width, height;
 
     public VectorImage(List<Shape> shapes, int width, int height){
-    this.shapes=shapes;
-    this.width=width;
-    this.height=height;
-
+        this.shapes = new ArrayList<>(shapes);
+        this.shapes = shapes;
+        setHeight(height);
+         setWidth(width);
     }
 
     @Override
     public Color getPixelColor(int x, int y) {
-        Point point= new Point(x, y);
+        Point point = new Point(x, y);
         for (Shape shapes: shapes) {
             if (shapes.contains(point)) {
                 return shapes.getColor();
