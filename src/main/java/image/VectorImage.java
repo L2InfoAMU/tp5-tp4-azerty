@@ -1,9 +1,9 @@
 package image;
 
+
 import javafx.scene.paint.Color;
 
 import java.util.List;
-import java.util.Map;
 
 public class VectorImage implements Image{
     List<Shape> shapes;
@@ -18,10 +18,13 @@ public class VectorImage implements Image{
 
     @Override
     public Color getPixelColor(int x, int y) {
-          if(SparseRasterImage.getPixelColor(x, y)) {
-
-          }
-        else return Color.WHITE; ;
+        Point point= new Point(x, y);
+        for (Shape shapes: shapes) {
+            if (shapes.contains(point)) {
+                return shapes.getColor();
+            }
+        }
+        return Color.WHITE;
     }
 
     @Override
